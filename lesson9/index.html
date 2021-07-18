@@ -15,14 +15,18 @@
 
     <!-- 
       v-on:clickを動的に表現する
-     -->
-    <p>現在{{ number }}回クリックされています</p>
-    <button v-on:[event]="countUp">カウントアップ</button>
-    <hr>
-
-    <!-- 
       []で動的にイベントを表現できる
      -->
+    <!-- <p>現在{{ number }}回クリックされています</p>
+    <button v-on:[event]="countUp">カウントアップ</button>
+    <hr> -->
+
+   
+    <!-- v-onの省略は@をつける -->
+    <p>現在{{ number }}回クリックされています</p>
+    <button @[event]="countUp">カウントアップ</button>
+    <hr>
+
 
   </div>
 
