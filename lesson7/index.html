@@ -41,6 +41,29 @@
      <p v-on:mousemove="changeMousePosition2($event, 10)">マウスを載せてください</p>
      <p>X2: {{ x2 }}, Y2: {{ y2 }}</p>
      <hr>
+
+     <!-- イベント修飾子 -->
+     <!-- <p v-on:mousemove="changeMousePosition2($event, 11)">マウスを載せてください
+       <span v-on:mousemove="noEvent">反応しないでください</span>
+     </p>
+    <p>X2: {{ x2 }}, Y2: {{ y2 }}</p> -->
+
+     <p v-on:mousemove="changeMousePosition2($event, 11)">マウスを載せてください
+       <!-- <span v-on:mousemove.stop="">反応しないでください</span> -->
+       <span v-on:mousemove.stop>反応しないでください</span>
+     </p>
+    <p>X2: {{ x2 }}, Y2: {{ y2 }}</p>
+    <hr>
+
+
+    <!-- aタグの処理を無効化する -->
+    <a v-on:click="noAccess" href="https://google.com">Google</a>
+    <hr>
+
+    <a v-on:click.prevent href="https://google.com">Google</a>
+    <hr>
+    <a v-on:click.prevent.stop href="https://google.com">Google</a>
+    <hr>
   </div>
 
   <script>
@@ -68,6 +91,12 @@
         changeMousePosition2: function (event, divideNumber) {
           this.x2 = event.clientX / divideNumber;
           this.y2 = event.clientY / divideNumber;
+        },
+        noEvent: function (event) {
+          event.stopPropagation();
+        },
+        noAccess: function (event) {
+          event.preventDefault();
         }
       }
     });
