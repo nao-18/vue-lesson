@@ -11,9 +11,14 @@
 
   <div id="app">
     <!-- computedプロパティの基礎 -->
-    <p>{{ counter }}</p>
+
+    <!-- 
+      computedプロパティ内で使用しているdataが変更した場合のみcomputedは発火する。
+      methodsは画面が際描画されるごとに発火してしまう。
+     -->
+    <h1>{{ counter }}</h1>
     <button @click="counter += 1">+</button>
-    <p>{{ lessThanThree }}</p>
+    <p>{{ lessThanThreeComputed }}</p>
   </div>
 
   <script>
@@ -23,7 +28,12 @@
         counter: 0
       },
       computed: {
-        lessThanThree: function () {
+        lessThanThreeComputed: function () {
+          return this.counter > 3 ? '3より上' : '3以下';
+        }
+      },
+      methods: {
+        lessThanThreeMethod: function () {
           return this.counter > 3 ? '3より上' : '3以下';
         }
       }
