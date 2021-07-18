@@ -11,6 +11,7 @@
 
   <!-- テンプレート構文 -->
   <div id="app">
+    <p v-once>{{ message }}</p>
     <p>{{ sayHi() }}</p>
   </div>
 
@@ -23,6 +24,7 @@
       methods: {
         sayHi: function() {
           // Vueインスタンス内はthisでアクセスする
+          this.message = 'HELLO WORLD!'
           return this.message;
         }
       }
