@@ -18,12 +18,29 @@
      -->
     <p>現在{{ number }}回クリックされています</p>
     <button v-on:click="countUp">カウントアップ</button>
+    <hr>
 
     <!-- 
       要素上へマウスが移動した際にイベントが発火する
      -->
     <p v-on:mousemove="changeMousePosition">マウスを載せてください</p>
     <p>X: {{ x }}, Y: {{ y }}</p>
+    <hr>
+
+    <!-- 
+      methodsで引数をとる
+     -->
+    <p>現在{{ number2 }}回クリックされています</p>
+    <button v-on:click="countUp2(3)">カウントアップ</button>
+    <hr>
+
+    <!-- 
+      引数にイベントと別の引数をとる場合
+      イベントは$eventで渡す
+     -->
+     <p v-on:mousemove="changeMousePosition2($event, 10)">マウスを載せてください</p>
+     <p>X2: {{ x2 }}, Y2: {{ y2 }}</p>
+     <hr>
   </div>
 
   <script>
@@ -31,16 +48,26 @@
       el: "#app",
       data: {
         number: 0,
+        number2: 0,
         x: 0,
-        y: 0
+        y: 0,
+        x2: 0,
+        y2: 0
       },
       methods: {
         countUp: function () {
           this.number++;
         },
+        countUp2: function (times) {
+          this.number2 += 1 * times; 
+        },
         changeMousePosition: function (event) {
           this.x = event.clientX;
           this.y = event.clientY;
+        },
+        changeMousePosition2: function (event, divideNumber) {
+          this.x2 = event.clientX / divideNumber;
+          this.y2 = event.clientY / divideNumber;
         }
       }
     });
