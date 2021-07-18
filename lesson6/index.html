@@ -11,16 +11,31 @@
 
   <!-- テンプレート構文 -->
   <div id="app">
-    <!-- v-bindディレクティブ -->
-    <!-- <a href="url">Google</a> -->
+    <!-- v-bindディレクティブの基礎 -->
+
     <a v-bind:href="url">Google</a>
+    <!-- <a href="url">Google</a> -->
     <!-- 省略形 -->
     <a :href="url">Google</a>
-
+    
     <!-- 
       v-bind:属性で使用できる。
       属性に任意の値を挿入する際に使用する。
      -->
+    <hr>
+    
+
+    <!-- v-bindディレクティブの応用 -->
+    
+    <!-- 属性を任意で設定する。 -->
+    <a :[attribute]="url">Google</a>
+
+    <hr>
+    <!-- v-bindの値にオブジェクト形式で複数属性を設定できる -->
+    <!-- <a :href="urlTwitter" :id="number">Twitter</a> -->
+    <!-- <a v-bind="{href: urlTwitter, id: number}">Twitter</a> -->
+    <a v-bind="twitterObject">Twitter</a>
+    <hr>
 
   </div>
 
@@ -28,7 +43,14 @@
     new Vue({
       el: "#app",
       data: {
-        url: 'https://google.com'
+        url: 'https://google.com',
+        // urlTwitter: 'https://twitter.com',
+        // number: 33,
+        attribute: 'href',
+        twitterObject: {
+          href: 'https://twitter.com',
+          id: 109
+        }
       },
     });
   </script>
