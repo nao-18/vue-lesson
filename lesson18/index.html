@@ -14,7 +14,9 @@
         v-for
        -->
       <ul>
-        <li v-for="fruit in fruits">{{ fruit }}</li>
+        <li v-for="(fruit, index) in fruits" :value="index">
+          ({{ index }}){{ fruit }}
+        </li>
       </ul>
     </div>
 
