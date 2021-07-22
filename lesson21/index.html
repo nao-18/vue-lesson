@@ -23,7 +23,6 @@
 
     <script>
       var vm = new Vue({
-        el: '#app',
         data: {
           message: 'インスタンス',
           name: '名前1',
@@ -35,11 +34,11 @@
         },
       });
 
-      vm.message = '書き換えた';
-      vm.name = '名前1';
-
       // $dataで全てのdataを取得できる
-      console.log(vm.$data);
+      // console.log(vm.$data);
+
+      //$mount()で後付けでマウントする
+      vm.$mount('#app');
     </script>
   </body>
 </html>
