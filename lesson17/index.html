@@ -14,7 +14,7 @@
       v-show
      -->
      <button @click="ok = !ok">ボタン</button>
-  
+
      <p v-if="ok">IF</p>
      <p v-show="ok">SHOW</p>
 
@@ -29,9 +29,9 @@
       <p>v-show</p>
      </template>
 
-     <!-- 
+     <!--
        v-showは初期描画のコストがかかる。
-       v-ifは短時間の切り替え多数の場合にコストガかかる。
+       v-ifは頻繁に切り替える場合にコストガかかる。
       -->
 
     </div>
