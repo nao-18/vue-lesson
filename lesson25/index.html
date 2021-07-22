@@ -16,14 +16,27 @@
     </div>
 
     <script>
+      var data = {
+        number: 12,
+      };
       Vue.component('my-component', {
         //Vuコンポーネントでdataを使う場合は関数にしなければならない。
-        data: function () {
+        //理由： オブジェクトでは複数コンポーネントを使用した場合に参照され書き変わってしまう。
+        // data: function () {
+        //   return data;
+        // },
+        data() {
           return {
             number: 12,
           };
         },
-        template: '<p>いいね({{ number }})</p>',
+        methods: {
+          increment: function () {
+            this.number++;
+          },
+        },
+        template:
+          '<p>いいね({{ number }})<button @click="increment">+1</button></p>',
       });
 
       new Vue({
