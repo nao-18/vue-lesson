@@ -25,11 +25,15 @@
         el: '#app',
         data: {
           message: 'インスタンス',
+          name: '名前1',
         },
       });
 
       vm.message = '書き換えた';
       vm.name = '名前1';
+
+      // $dataで全てのdataを取得できる
+      console.log(vm.$data);
     </script>
   </body>
 </html>
