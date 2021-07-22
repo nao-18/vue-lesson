@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!--
+      外部からプロパティを追加した場合はリアクティブにならない。
+      →dataプロパティに追加されるとゲッターとセッターが自動生成されて
+      リアクティブになる。
+     -->
+    <div id="app">
+      <p>{{ message }}</p>
+      <p>{{ name }}</p>
+      <button @click="name = 'ボタンで書き換えた'">書き換えボタン</button>
+    </div>
+
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          message: 'インスタンス',
+        },
+      });
+
+      vm.message = '書き換えた';
+      vm.name = '名前1';
+    </script>
+  </body>
+</html>
