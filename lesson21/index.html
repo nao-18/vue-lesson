@@ -17,6 +17,7 @@
     <div id="app">
       <p>{{ message }}</p>
       <p>{{ name }}</p>
+      <p>{{ myData }}</p>
       <button @click="name = 'ボタンで書き換えた'">書き換えボタン</button>
     </div>
 
@@ -26,6 +27,11 @@
         data: {
           message: 'インスタンス',
           name: '名前1',
+        },
+        computed: {
+          myData: function () {
+            return this.$data;
+          },
         },
       });
 
