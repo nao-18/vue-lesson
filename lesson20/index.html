@@ -19,20 +19,28 @@
 
     <div id="app2">
       <p>{{ message }}</p>
+      <button @click="changeMessage">インスタンスのメッセージを書き換え</button>
     </div>
 
     <script>
-      new Vue({
+      var vm1 = new Vue({
         el: '#app1',
         data: {
           message: 'インスタンス',
         },
       });
 
+      vm1.message = '書き換えられました1';
+
       new Vue({
         el: '#app2',
         data: {
           message: 'インスタンス2',
+        },
+        methods: {
+          changeMessage: function () {
+            vm1.message = 'インスタンスから書き換えられました';
+          },
         },
       });
     </script>
