@@ -18,6 +18,13 @@
           ({{ index }}){{ fruit }}
         </li>
       </ul>
+
+      <!--
+        v-for object
+       -->
+      <ul>
+        <li v-for="value in object">{{ value }}</li>
+      </ul>
     </div>
 
     <script>
@@ -25,6 +32,11 @@
         el: '#app',
         data: {
           fruits: ['いちご', 'メロン', 'もも'],
+          object: {
+            firstName: '太郎',
+            lastName: '田中',
+            age: 28,
+          },
         },
       });
     </script>
