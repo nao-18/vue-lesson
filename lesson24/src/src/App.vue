@@ -1,7 +1,9 @@
 <template>
   <div>
     <LikeHeader></LikeHeader>
-    <LikeNumber></LikeNumber>
+    <h2>{{ number }}</h2>
+    <LikeNumber :number="number"></LikeNumber>
+    <LikeNumber :number="number"></LikeNumber>
   </div>
 </template>
 
@@ -10,6 +12,11 @@ import LikeHeader from "./components/LikeHeader.vue";
 
 // コンポーネント名やtemplate内のタグ、vueファイル名は"パスカルケース"で書く。
 export default {
+  data() {
+    return {
+      number: 10,
+    };
+  },
   components: {
     LikeHeader,
   },
