@@ -23,7 +23,9 @@
         v-for object
        -->
       <ul>
-        <li v-for="value in object">{{ value }}</li>
+        <li v-for="(value, key, index) in object" :value="index">
+          ({{ index }}){{ key }}-{{ value }}
+        </li>
       </ul>
     </div>
 
