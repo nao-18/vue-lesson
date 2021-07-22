@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <div id="app">
+      <my-component></my-component>
+      <my-component></my-component>
+      <my-component></my-component>
+      <hr />
+    </div>
+
+    <div id="app2">
+      <my-component></my-component>
+      <my-component></my-component>
+      <my-component></my-component>
+    </div>
+
+    <script>
+      var component = {
+        data() {
+          return {
+            number: 12,
+          };
+        },
+        methods: {
+          increment: function () {
+            this.number++;
+          },
+        },
+        template:
+          '<p>いいね({{ number }})<button @click="increment">+1</button></p>',
+      };
+
+      new Vue({
+        el: '#app',
+        //Vueコンポーネントはローカル登録できる。
+        components: {
+          'my-component': component,
+        },
+      });
+
+      new Vue({
+        el: '#app2',
+      });
+    </script>
+  </body>
+</html>
