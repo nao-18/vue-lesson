@@ -8,6 +8,7 @@
 <script>
 import LikeHeader from "./components/LikeHeader.vue";
 
+// コンポーネント名やtemplate内のタグ、vueファイル名は"パスカルケース"で書く。
 export default {
   components: {
     LikeHeader,
