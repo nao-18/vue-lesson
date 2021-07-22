@@ -18,7 +18,12 @@
 
      <p v-if="ok">OK!</p>
 
-     <!-- 
+     <!--
+       v-else-ifは v-ifの直下に書く
+      -->
+     <p v-else-if="maybeOk">maybe OK!</p>
+
+     <!--
        v-elseは v-ifの直下にしないといけない。
       -->
      <p v-else>Not Ok...</p>
@@ -28,7 +33,8 @@
     new Vue({
       el: "#app",
       data: {
-        ok: false
+        ok: false,
+        maybeOk: true
       }
     });
   </script>
