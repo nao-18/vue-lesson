@@ -54,6 +54,9 @@
           return h('h1', 'こんばんわ、' + this.name);
         },
       }).$mount('#app3');
+
+      // リアルDOMにアクセスするにはコストがかかる。
+      // 仮装DOMだと早い。
     </script>
   </body>
 </html>
