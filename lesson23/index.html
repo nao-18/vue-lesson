@@ -10,12 +10,25 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
     <div id="app">
+      <!-- 複数Vueインスタンスをcomponentによって使いまわせる -->
+      <hello></hello>
+      <hello></hello>
+      <hello></hello>
       <p>こんにちは、{{ name }}</p>
       <button @click="name = '太郎'">名前を変更</button>
       <button @click="destroy">インスタンスを削除</button>
     </div>
 
+    <!-- clsssで複数指定しても一番最初しかvueインスタンスは適用されない。 -->
+    <div class="hello"></div>
+    <div class="hello"></div>
+
     <script>
+      //コンポーネントでインスタンスを使いまわせる
+      Vue.component('hello', {
+        template: '<h1>こんばんわ</h1>',
+      });
+
       new Vue({
         el: '#app',
         data: {
@@ -50,6 +63,14 @@
             this.$destroy();
           },
         },
+      });
+
+      new Vue({
+        el: '.hello',
+        data: {
+          message: 'こんにちは',
+        },
+        template: '<h1>{{ message }}</h1>',
       });
     </script>
   </body>
