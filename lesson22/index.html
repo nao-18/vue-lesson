@@ -17,7 +17,9 @@
       <p>{{ myData }}</p>
       <button @click="name = 'ボタンで書き換えた'">書き換えボタン</button>
     </div>
+
     <div id="app2"></div>
+    <div id="app3"></div>
 
     <script>
       var vm = new Vue({
@@ -40,6 +42,18 @@
         },
         template: '<h1>こんにちは、{{ name }}</h1>',
       }).$mount('#app2');
+
+      // renderプロパティによりマスタッシュ構文を追加できる
+      new Vue({
+        data: {
+          name: '田中',
+        },
+        // hはdocument.createElementとは違う。
+        // hは仮装domを作成している。(仮装ノード)
+        render: function (h) {
+          return h('h1', 'こんばんわ、' + this.name);
+        },
+      }).$mount('#app3');
     </script>
   </body>
 </html>
