@@ -1,8 +1,17 @@
 <template>
   <div>
     <LikeHeader>
-      <!-- <h1>トータルのいいね数</h1>
-      <h2>{{ number }}</h2> -->
+      <!--
+        親から子へ特定のslotへ送りたい場合は、
+        親コンポーネントの送りたいtemplateへ「v-slot:引数」で定義する。
+        必ず、tepmlateタグで囲わないといけない。
+       -->
+      <template v-slot:title>
+        <h2>こんにちは</h2>
+      </template>
+      <template v-slot:number>
+        <p>{{ number }}</p>
+      </template>
     </LikeHeader>
     <LikeNumber :total-number="number" @my-click="number = $event"></LikeNumber>
     <LikeNumber :total-number="number" @my-click="number = $event"></LikeNumber>

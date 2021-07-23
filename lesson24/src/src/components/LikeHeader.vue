@@ -2,15 +2,19 @@
   <div>
     <!-- slotは全てのtemplateを送られる -->
     <!-- slotタグ内の記述は全てdefault値として扱われる(フォールバックコンテンツ) -->
-    <slot>デフォルトのタイトル</slot>
+
+    <!--
+      名前付きslotで親コンポーネントで定義したslot名を
+      子コンポーネントで「name=属性名」で受け取る。
+     -->
+    <slot name="title"></slot>
     <hr />
 
     <!--
       複数slotを同時に使える
      -->
-    <slot></slot>
-    <slot></slot>
-    <slot></slot>
+    <p>いいねの数</p>
+    <slot name="number"></slot>
   </div>
 </template>
 
