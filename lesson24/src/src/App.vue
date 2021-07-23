@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LikeHeader v-slot:default="slotProps">
+    <LikeHeader v-slot="slotProps">
       <!-- <template v-slot:title="slotProps"> -->
       <p>{{ slotProps }}</p>
       <h2>こんにちは</h2>
