@@ -8,6 +8,7 @@
       子コンポーネントで「name=属性名」で受け取る。
      -->
     <slot name="title"></slot>
+    <slot></slot>
     <hr />
 
     <!--

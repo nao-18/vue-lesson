@@ -6,9 +6,11 @@
         親コンポーネントの送りたいtemplateへ「v-slot:引数」で定義する。
         必ず、tepmlateタグで囲わないといけない。
        -->
+      <h1>ホゲhごえ</h1>
       <template v-slot:title>
         <h2>こんにちは</h2>
       </template>
+      <p>ああああああ</p>
       <template v-slot:number>
         <p>{{ number }}</p>
       </template>
