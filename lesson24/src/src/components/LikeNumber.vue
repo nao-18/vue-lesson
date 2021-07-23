@@ -24,6 +24,7 @@ export default {
   methods: {
     increment() {
       // 親のイベントを発火させるのが$emit
+      //カスタムイベントは「ケバブケース」で記述する。→jsで使われないため。
       this.$emit("my-click", this.totalNumber + 1);
     },
   },
