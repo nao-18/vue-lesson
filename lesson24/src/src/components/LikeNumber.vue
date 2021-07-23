@@ -20,9 +20,10 @@ export default {
     },
   },
   methods: {
-    // increment() {
-    //   this.number++;
-    // },
+    increment() {
+      // 親のイベントを発火させるのが$emit
+      this.$emit("my-click", this.totalNumber + 1);
+    },
   },
 };
 </script>
