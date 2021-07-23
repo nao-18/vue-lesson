@@ -1,7 +1,8 @@
 <template>
   <div>
-    <!-- slotは全てのtemplateを送れる -->
-    <slot></slot>
+    <!-- slotは全てのtemplateを送られる -->
+    <!-- slotタグ内の記述は全てdefault値として扱われる(フォールバックコンテンツ) -->
+    <slot>デフォルトのタイトル</slot>
   </div>
 </template>
 
