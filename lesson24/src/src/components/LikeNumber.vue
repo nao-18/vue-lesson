@@ -7,6 +7,8 @@
 
 <script>
 export default {
+  //propsは参照渡し(オブジェクト、配列)になるため、
+  //子コンポーネントで書き換えられてしまう。→書き換えはエラーになる。
   props: {
     totalNumber: {
       type: Number,
