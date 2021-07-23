@@ -2,7 +2,12 @@
   <div>
     <LikeHeader>
       <!-- <template v-slot:title="slotProps"> -->
-      <template v-slot:[title]="slotProps">
+
+      <!--
+        v-slot:属性名は 「#属性名」に置き換えられる。
+        defaultのみ場合のslot="slotプロパティ名"は 「#default="slotプロパティ名"」になる。
+       -->
+      <template #[title]="slotProps">
         <p>{{ slotProps }}</p>
         <h2>こんにちは</h2>
       </template>
