@@ -1,20 +1,10 @@
 <template>
   <div>
-    <LikeHeader>
-      <!--
-        親から子へ特定のslotへ送りたい場合は、
-        親コンポーネントの送りたいtemplateへ「v-slot:引数」で定義する。
-        必ず、tepmlateタグで囲わないといけない。
-       -->
-      <h1>ホゲhごえ</h1>
-      <template v-slot:title="slotProps">
-        <h2>こんにちは</h2>
-        <h2>{{ slotProps.user.firstName }}</h2>
-      </template>
-      <p>ああああああ</p>
-      <template v-slot:number>
-        <p>{{ number }}</p>
-      </template>
+    <LikeHeader v-slot:default="slotProps">
+      <!-- <template v-slot:title="slotProps"> -->
+      <p>{{ slotProps }}</p>
+      <h2>こんにちは</h2>
+      <!-- </template> -->
     </LikeHeader>
     <LikeNumber :total-number="number" @my-click="number = $event"></LikeNumber>
     <LikeNumber :total-number="number" @my-click="number = $event"></LikeNumber>
