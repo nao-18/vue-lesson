@@ -7,8 +7,9 @@
         必ず、tepmlateタグで囲わないといけない。
        -->
       <h1>ホゲhごえ</h1>
-      <template v-slot:title>
+      <template v-slot:title="slotProps">
         <h2>こんにちは</h2>
+        <h2>{{ slotProps.user.firstName }}</h2>
       </template>
       <p>ああああああ</p>
       <template v-slot:number>

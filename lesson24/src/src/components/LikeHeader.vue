@@ -7,7 +7,7 @@
       名前付きslotで親コンポーネントで定義したslot名を
       子コンポーネントで「name=属性名」で受け取る。
      -->
-    <slot name="title"></slot>
+    <slot name="title" :user="user"></slot>
     <slot></slot>
     <hr />
 
@@ -21,6 +21,13 @@
 
 <script>
 export default {
-  props: ["headerText"],
+  data() {
+    return {
+      user: {
+        firstName: "jack",
+        lastName: "donald",
+      },
+    };
+  },
 };
 </script>
