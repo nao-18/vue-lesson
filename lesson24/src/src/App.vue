@@ -12,12 +12,15 @@
     <div>
       <h2>イベントのフォーム</h2>
       <label for="title">タイトル</label>
-      <!--
-        lazyはフォーカスが歯擦れた場合(change)に発火する、
-        →email入力などに使用。
-      -->
       <input id="title" type="text" v-model.lazy="eventData.title" />
       <p>{{ eventData.title }}</p>
+      <label for="maxNumber">最大人数</label>
+      <input
+        id="maxNumber"
+        type="number"
+        v-model.number="eventData.maxNumber"
+      />
+      <p>{{ typeof eventData.maxNumber }}</p>
     </div>
   </div>
 </template>
@@ -35,6 +38,7 @@ export default {
       currentComponent: "Home",
       eventData: {
         title: "タイトル",
+        maxNumber: 0,
       },
     };
   },
