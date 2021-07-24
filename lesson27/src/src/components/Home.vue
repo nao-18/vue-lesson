@@ -18,6 +18,7 @@ export default {
     };
   },
   filters: {
+    //filters内部ではthisは使えない。
     lowerCase(value) {
       return value.toLowerCase();
     },
