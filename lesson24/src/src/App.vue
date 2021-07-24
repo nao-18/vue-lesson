@@ -1,36 +1,40 @@
 <template>
   <div>
     <LikeHeader>
-      <!-- <template v-slot:title="slotProps"> -->
-
-      <!--
-        v-slot:属性名は 「#属性名」に置き換えられる。
-        defaultのみ場合のslot="slotプロパティ名"は 「#default="slotプロパティ名"」になる。
-       -->
-      <template #[title]="slotProps">
-        <p>{{ slotProps }}</p>
-        <h2>こんにちは</h2>
-      </template>
-      <!-- </template> -->
+      <h3>はじめまして</h3>
     </LikeHeader>
     <LikeNumber :total-number="number" @my-click="number = $event"></LikeNumber>
-    <LikeNumber :total-number="number" @my-click="number = $event"></LikeNumber>
+    <button @click="currentComponent = 'Home'">Home</button>
+    <button @click="currentComponent = 'About'">About</button>
+
+    <!--
+      動的コンポーネント
+     -->
+    <component :is="currentComponent"></component>
+    <!--
+      <About v-if="currentComponent === 'About'"></About>
+      <Home v-if="currentComponent === 'Home'"></Home>
+    -->
   </div>
 </template>
 
 <script>
 import LikeHeader from "./components/LikeHeader.vue";
+import Home from "./components/Home.vue";
+import About from "./components/About.vue";
 
 // コンポーネント名やtemplate内のタグ、vueファイル名は"パスカルケース"で書く。
 export default {
   data() {
     return {
       number: 10,
-      title: "title",
+      currentComponent: "Home",
     };
   },
   components: {
     LikeHeader,
+    Home,
+    About,
   },
 };
 </script>
