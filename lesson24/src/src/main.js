@@ -23,11 +23,11 @@ app.component('LikeNumber', LikeNumber);
 // });
 
 app.directive('border', function(el, binding) {
-  //boderスタイル追加
-  el.style.border = "solid black 2px";
   // boder幅追加
   el.style.borderWidth = binding.value.width;
   //boder色追加
   el.style.borderColor = binding.value.color;
+  //引数からデータ追加
+  el.style.borderStyle = binding.arg;
 });
 app.mount('#app');
