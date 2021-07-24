@@ -11,15 +11,7 @@
     </keep-alive>
     <div>
       <h2>イベントのフォーム</h2>
-      <label for="title">タイトル</label>
-      <!-- v-modelは下記の:valeと@clickと同じ(inputタグ かつ textの場合) -->
-      <input
-        id="title"
-        type="text"
-        :value="eventData.title"
-        @input="eventData.title = $event.target.value"
-      />
-      <pre>{{ eventData.title }}</pre>
+      <EventTitle v-model="eventData.title"></EventTitle>
       <label for="maxNumber">最大人数</label>
       <input
         id="maxNumber"
@@ -71,6 +63,7 @@
 import LikeHeader from "./components/LikeHeader.vue";
 import Home from "./components/Home.vue";
 import About from "./components/About.vue";
+import EventTitle from "./components/EventTitle.vue";
 
 // コンポーネント名やtemplate内のタグ、vueファイル名は"パスカルケース"で書く。
 export default {
@@ -95,6 +88,7 @@ export default {
     LikeHeader,
     Home,
     About,
+    EventTitle,
   },
 };
 </script>
