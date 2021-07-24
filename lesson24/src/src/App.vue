@@ -51,7 +51,7 @@
       <label for="paid">有料</label>
       <p>{{ eventData.price }}</p>
       <p>開催場所</p>
-      <select v-model="eventData.location">
+      <select v-model="eventData.location" multiple>
         <option v-for="location in locations" :key="location">
           {{ location }}
         </option>
@@ -81,7 +81,7 @@ export default {
         isPrivate: false,
         target: [],
         price: "",
-        location: "東京",
+        location: [],
       },
     };
   },
