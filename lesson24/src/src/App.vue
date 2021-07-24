@@ -10,7 +10,10 @@
     <!--
       動的コンポーネント
      -->
-    <component :is="currentComponent"></component>
+    <!-- keep-aliveタグで切り替えのデータを保持できる。 -->
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
     <!--
       <About v-if="currentComponent === 'About'"></About>
       <Home v-if="currentComponent === 'Home'"></Home>
