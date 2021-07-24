@@ -3,8 +3,8 @@
     <p v-border:solid.round.shadow="{ width: '5px', color: 'brown' }">
       {{ tmpData }}
     </p>
-    <h2>{{ title | lowerCase }}</h2>
-    <p>{{ subTitle | lowerCase }}</p>
+    <h2>{{ title | lowerCase | upperCase }}</h2>
+    <p>{{ subTitle | lowerCase | lowerCase }}</p>
   </div>
 </template>
 
