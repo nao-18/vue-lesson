@@ -50,6 +50,13 @@
       <input type="radio" id="paid" value="有料" v-model="eventData.price" />
       <label for="paid">有料</label>
       <p>{{ eventData.price }}</p>
+      <p>開催場所</p>
+      <select v-model="eventData.location">
+        <option v-for="location in locations" :key="location">
+          {{ location }}
+        </option>
+      </select>
+      <p>{{ eventData.location }}</p>
     </div>
   </div>
 </template>
@@ -65,6 +72,7 @@ export default {
     return {
       number: 10,
       currentComponent: "Home",
+      locations: ["東京", "名古屋", "大阪"],
       eventData: {
         title: "",
         maxNumber: 0,
@@ -73,6 +81,7 @@ export default {
         isPrivate: false,
         target: [],
         price: "",
+        location: "東京",
       },
     };
   },
