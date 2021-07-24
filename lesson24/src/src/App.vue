@@ -6,18 +6,19 @@
     <LikeNumber :total-number="number" @my-click="number = $event"></LikeNumber>
     <button @click="currentComponent = 'Home'">Home</button>
     <button @click="currentComponent = 'About'">About</button>
-
-    <!--
-      動的コンポーネント
-     -->
-    <!-- keep-aliveタグで切り替えのデータを保持できる。 -->
     <keep-alive>
       <component :is="currentComponent"></component>
     </keep-alive>
-    <!--
-      <About v-if="currentComponent === 'About'"></About>
-      <Home v-if="currentComponent === 'Home'"></Home>
-    -->
+    <div>
+      <h2>イベントのフォーム</h2>
+      <label for="title">タイトル</label>
+      <!--
+        lazyはフォーカスが歯擦れた場合(change)に発火する、
+        →email入力などに使用。
+      -->
+      <input id="title" type="text" v-model.lazy="eventData.title" />
+      <p>{{ eventData.title }}</p>
+    </div>
   </div>
 </template>
 
@@ -32,6 +33,9 @@ export default {
     return {
       number: 10,
       currentComponent: "Home",
+      eventData: {
+        title: "タイトル",
+      },
     };
   },
   components: {
@@ -41,9 +45,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-div {
-  border: 1px solid blue;
-}
-</style>
