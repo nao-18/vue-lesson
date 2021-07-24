@@ -33,6 +33,9 @@
       v-model="eventData.detail"
     ></textarea>
     <p style="white-space: pre fdsa">{{ eventData.detail }}</p>
+    <input type="checkbox" id="isPrivate" v-model="eventData.isPrivate" />
+    <label for="isPrivate">非公開</label>
+    <p>{{ eventData.isPrivate }}</p>
   </div>
 </template>
 
@@ -52,6 +55,7 @@ export default {
         maxNumber: 0,
         host: "",
         detail: "",
+        isPrivate: false,
       },
     };
   },
