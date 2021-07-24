@@ -1,11 +1,21 @@
 <template>
-  <h1 v-border:solid.round.shadow="{ width: '5px', color: 'brown' }">Home</h1>
+  <h1 v-border:solid.round.shadow="{ width: '5px', color: 'brown' }">
+    {{ tmpData }}
+  </h1>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      tmpData: "hello",
+    };
+  },
   directives: {
     border(el, binding) {
+      // thisはdirectives配下で使えない。
+      // this.tmpData = "こんにちは";
+
       // boder幅追加
       el.style.borderWidth = binding.value.width;
       //boder色追加
