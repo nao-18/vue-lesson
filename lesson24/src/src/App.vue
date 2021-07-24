@@ -12,7 +12,13 @@
     <div>
       <h2>イベントのフォーム</h2>
       <label for="title">タイトル</label>
-      <input id="title" type="text" v-model.lazy="eventData.title" />
+      <!-- v-modelは下記の:valeと@clickと同じ(inputタグ かつ textの場合) -->
+      <input
+        id="title"
+        type="text"
+        :value="eventData.title"
+        @input="eventData.title = $event.target.value"
+      />
       <pre>{{ eventData.title }}</pre>
       <label for="maxNumber">最大人数</label>
       <input
