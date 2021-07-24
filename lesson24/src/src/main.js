@@ -22,20 +22,20 @@ app.component('LikeNumber', LikeNumber);
 //   // },
 // });
 
-app.directive('border', function(el, binding) {
-  // boder幅追加
-  el.style.borderWidth = binding.value.width;
-  //boder色追加
-  el.style.borderColor = binding.value.color;
-  //引数からデータ追加
-  el.style.borderStyle = binding.arg;
-  //丸み
-  if (binding.modifiers.round) {
-    el.style.borderRadius = "0.5rem"
-  }
-  //影
-  if (binding.modifiers.shadow) {
-    el.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.26)"
-  }
-});
+// app.directive('border', function(el, binding) {
+//   // boder幅追加
+//   el.style.borderWidth = binding.value.width;
+//   //boder色追加
+//   el.style.borderColor = binding.value.color;
+//   //引数からデータ追加
+//   el.style.borderStyle = binding.arg;
+//   //丸み
+//   if (binding.modifiers.round) {
+//     el.style.borderRadius = "0.5rem"
+//   }
+//   //影
+//   if (binding.modifiers.shadow) {
+//     el.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.26)"
+//   }
+// });
 app.mount('#app');
