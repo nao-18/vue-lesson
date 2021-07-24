@@ -5,24 +5,23 @@
     </p>
     <h2>{{ title | lowerCase | upperCase }}</h2>
     <p>{{ subTitle | lowerCase | lowerCase }}</p>
+    <CountNumber></CountNumber>
   </div>
 </template>
 
 <script>
+import CountNumber from "./CountNumber.vue";
+import { tokyoNumber } from "@/tokyoNumber.js";
+
 export default {
+  mixins: [tokyoNumber],
   data() {
     return {
       tmpData: "hello",
-      title: "Welcome to Tokyo",
-      subTitle: "Tokyo is a great city",
     };
   },
-  //filters(グローバルも)もmethodsと同じで描画する度に実行される。
-  filters: {
-    //filters内部ではthisは使えない。
-    lowerCase(value) {
-      return value.toLowerCase();
-    },
+  components: {
+    CountNumber,
   },
   directives: {
     border(el, binding) {
